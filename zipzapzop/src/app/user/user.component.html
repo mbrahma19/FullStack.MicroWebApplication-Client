@@ -1,6 +1,8 @@
 
 <div>
 
+
+
 <form (ngSubmit)="register()" method="post">
 
 
@@ -11,22 +13,22 @@
 
 
 <div>
-  <label>Username:
-  <input [(ngModel)]="user.username"  name="username" placeholder="username"type="text" size="30"username="name" id="username"[ngClass]="{ 'is-invalid': submitted }"/>
-    <div *ngIf="user.username.errors._currentError">User Name is required</div>
-  </label>
-  </div>
+  <label>Username:</label>
+  <input [(ngModel)]="user.username"  placeholder="username" name="username" type="text" size="30"  [ngClass]="{ 'is-invalid': submitted }" />
+    <!--<span *ngIf="user.username.errors.required">User Name is required</span>-->
 
 
-<br>
+</div>
+
+  <br>
 <br>
 
   <div>
-  <label>Password:
-    <input [(ngModel)]="user.password"  name="password" placeholder="password" type="text" size="30" password="password" id="password"[ngClass]="{ 'is-invalid': submitted }"/>
-    <div *ngIf="user.password.errors.required">Password is required</div>
-    <div *ngIf="user.password.errors.minlength">Password must be at least 6 characters</div>
-  </label>
+  <label>Password: </label>
+    <input [(ngModel)]="user.password" placeholder="password" name="password" type="Password" size="30" [ngClass]="{ 'is-invalid': submitted }"/>
+    <!--<span *ngIf="user.password.errors.required">Password is required</span>
+    <span *ngIf="user.password.errors.minlength">Password must be at least 6 characters</span>-->
+
     </div>
 
 <br>
@@ -34,11 +36,11 @@
 
 
   <div>
-  <label>FirstName:
-    <input [(ngModel)]="user.firstname"  name="firstname" placeholder="firstname"type="text" size="30" firstname="firstname" id="firstname"[ngClass]="{ 'is-invalid': submitted && user.firstname.errors  }"/>
+  <label>FirstName:  </label>
+    <input [(ngModel)]="user.firstName"  name="first_name" placeholder="firstName" type="text" size="30"  [ngClass]="{ 'is-invalid': submitted}"/>
 
-    <div *ngIf="user.firstname.errors.required">firstname is required</div>
-  </label>
+    <!--<div *ngIf="user.firstname.errors.required">firstname is required</div>-->
+
     </div>
 
 <br>
@@ -46,10 +48,10 @@
 
 
 <div>
-  <label>LastName:
-    <input [(ngModel)]="user.lastname"  name="lastname" placeholder="lastname"type="text" size="30"lastname="lastname" id="lastname"[ngClass]="{ 'is-invalid': submitted && user.lastname.errors }"/>
-    <div *ngIf="user.lastname.errors.required">lastname is required</div>
-  </label>
+  <label>LastName: </label>
+    <input [(ngModel)]="user.lastName"  name="last_name" placeholder="lastName" type="text" size="30" [ngClass]="{ 'is-invalid': submitted && user.lastname.errors }"/>
+    <!--<div *ngIf="user.lastname.errors.required">lastname is required</div>-->
+
 </div>
 
 <br>
@@ -57,10 +59,10 @@
 
 
 <div>
-  <label>Email:
-    <input [(ngModel)]="user.email"  name="email"placeholder="email" type="text" size="30" email="email" id="email"[ngClass]="{'is-invalid': submitted && user.email.errors }"/>
-    <div *ngIf="user.lastname.errors.required">email is required</div>
-  </label>
+  <label>Email:  </label>
+    <input [(ngModel)]="user.email"  name="email" placeholder="email" type="text" size="30"  [ngClass]="{'is-invalid': submitted && user.email.errors }"/>
+    <!--<div *ngIf="user.lastname.errors.required">email is required</div>-->
+
 </div>
 
 
@@ -76,65 +78,4 @@
 </form>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--<h2>Register</h2>-->
-<!--<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">-->
-  <!--<div class="form-group">-->
-    <!--<label>First Name</label>-->
-    <!--<input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />-->
-    <!--<div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">-->
-      <!--<div *ngIf="f.firstName.errors.required">First Name is required</div>-->
-    <!--</div>-->
-  <!--</div>-->
-  <!--<div class="form-group">-->
-    <!--<label>Last Name</label>-->
-    <!--<input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />-->
-    <!--<div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">-->
-      <!--<div *ngIf="f.lastName.errors.required">Last Name is required</div>-->
-    <!--</div>-->
-  <!--</div>-->
-  <!--<div class="form-group">-->
-    <!--<label>Userame</label>-->
-    <!--<input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />-->
-    <!--<div *ngIf="submitted && f.username.errors" class="invalid-feedback">-->
-      <!--<div *ngIf="f.username.errors.required">Username is required</div>-->
-    <!--</div>-->
-  <!--</div>-->
-  <!--<div class="form-group">-->
-    <!--<label>Password</label>-->
-    <!--<input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />-->
-    <!--<div *ngIf="submitted && f.password.errors" class="invalid-feedback">-->
-      <!--<div *ngIf="f.password.errors.required">Password is required</div>-->
-      <!--<div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>-->
-    <!--</div>-->
-
-    <!--<div class="form-group">-->
-      <!--<label>Email</label>-->
-      <!--<input type="email" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />-->
-      <!--<div *ngIf="submitted && f.password.errors" class="invalid-feedback">-->
-        <!--<div *ngIf="f.password.errors.required">Password is required</div>-->
-        <!--<div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>-->
-      <!--</div>-->
-  <!--</div>-->
-  <!--<div class="form-group">-->
-    <!--<button [disabled]="loading" class="btn btn-primary">Register</button>-->
-    <!--<img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />-->
-    <!--<a [routerLink]="['/login']" class="btn btn-link">Cancel</a>-->
-  <!--</div>-->
-  <!--</div>-->
-<!--</form>-->
-
+</div>
