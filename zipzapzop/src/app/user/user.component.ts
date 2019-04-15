@@ -1,15 +1,17 @@
-import {Component, NgModule, OnInit} from '@angular/core';
+import {Component,  OnInit} from '@angular/core';
+
 
 // @ts-ignore
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
 
-import {userService } from '../userService'
+import {userService } from './userService'
 
 
 
 
-import { User } from '../user';
+import { User } from './user';
+
 import {AppComponent} from "../app.component";
 import {PostComponent} from "../post/post.component";
 import {CommentComponent} from "../comment/comment.component";
@@ -23,36 +25,39 @@ import {TagComponent} from "../tag/tag.component";
 
 export class UserComponent implements OnInit {
 
- User = new User();
+
  errorMessage: string;
 
-  constructor(private userService: userService) {
+  constructor(public userService: userService) {
 
 
   }
 
+
+
   ngOnInit() {
+
   }
 
 
   user: User = {
 
-    title : 'User Registration',
-    username: 'Username',
-    password: 'password',
-    firstname: 'firstname',
-    lastname: 'lastname',
-    email: 'email'
+    title:'Please Register',
+    username: '',
+    password: '',
+    firstName: '',
+    lastName: '',
+    email: ''
 
 
 };
 
 
 
-
    register(){
 
     if (!this.user) { return; }
+    console.log(this.user.firstName.toString())
     this.userService.register(this.user)
       .subscribe(
         user => this.user,
