@@ -7,6 +7,11 @@ import { Headers, RequestOptions } from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 
 
+import {Router, RouterModule, Routes} from '@angular/router';
+
+
+
+
 
 
 
@@ -21,6 +26,8 @@ export class userService {
 
   private userUrl = 'http://localhost:8090/registration';
 
+
+
   private http: Http;
 
   constructor(http: Http) {
@@ -32,6 +39,7 @@ export class userService {
       .map((response: Response) => <User[]>response.json())
       .catch(this.handleError);
   }
+
 
 
 
@@ -54,13 +62,25 @@ export class userService {
 
 
   private extractData(res: Response) {
-    let body = res.json();
+     // let body = res.json();
+     let body = res.toString();
+
     let headers = new Headers({ 'Access-Control-Allow-Origin': "*" });
-    return body.data || {};
+     // return body.data || {};
+    console.log (body.toString());
+
+   return  body.toString();
+
+
   }
 
   private handleError(error: Response) {
     console.error(error);
     return Observable.throw(error.json().error || 'Server Error');
+  }
+
+
+  navigatePost() {
+    this.router.navigateByUrl('/posts');
   }
 }
