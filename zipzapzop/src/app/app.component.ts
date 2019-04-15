@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { User } from "./user/user";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,14 @@ import { User } from "./user/user";
 })
 export class AppComponent {
   title = 'ZipZapZop Blog';
-  data = new User();
+
+  constructor(private router: Router) { }
+
+  navigate() {
+    this.router.navigate(["user"]);
+  }
+
+
+
 
 }

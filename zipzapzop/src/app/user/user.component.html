@@ -1,21 +1,27 @@
 
-<div>
 
 
 
-<form (ngSubmit)="register()" method="post">
+
+<form name="myForm" (ngSubmit)="register()" method="post" ng-controller="builtinValidationCtrl as $ctrl"
+      ng-submit="$ctrl.submit()">
 
 
 
     <h2>
-      {{user.title}}!!!!
+      {{user.title}}
     </h2>
 
+  <br>
+  <br>
 
-<div>
+
+<div class="form-group"
+  ng-class="{'has-error': form2.name.$touched && form2.name.$invalid}">
+
   <label>Username:</label>
-  <input [(ngModel)]="user.username"  placeholder="username" name="username" type="text" size="30"  [ngClass]="{ 'is-invalid': submitted }" />
-    <!--<span *ngIf="user.username.errors.required">User Name is required</span>-->
+  <input [(ngModel)]="user.username"  placeholder="username" name="username" type="text" size="30"  [ngClass]="{ 'is-invalid': submitted }" ng-model="$ctrl.name" ng-pattern="/^[a-zA-Z]+$/"/>
+
 
 
 </div>
@@ -23,11 +29,12 @@
   <br>
 <br>
 
-  <div>
+  <div class="form-group" ng-class="{'has-error': form2.pass.$touched && form2.pass.$invalid}">
   <label>Password: </label>
-    <input [(ngModel)]="user.password" placeholder="password" name="password" type="Password" size="30" [ngClass]="{ 'is-invalid': submitted }"/>
-    <!--<span *ngIf="user.password.errors.required">Password is required</span>
-    <span *ngIf="user.password.errors.minlength">Password must be at least 6 characters</span>-->
+    <input [(ngModel)]="user.password" placeholder="password" name="password" type="Password" size="30" [ngClass]="{ 'is-invalid': submitted }" required
+           ng-model="$ctrl.pass"
+           ng-minlength="4"/>
+
 
     </div>
 
@@ -71,11 +78,12 @@
 <br>
 <br>
 <div>
-  <button type="submit" class="btn btn-default" >Register</button>
+  <button type="submit"  class="btn btn-default" >Register</button>
 </div>
+
 
 
 </form>
 
 
-</div>
+

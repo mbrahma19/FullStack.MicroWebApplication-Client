@@ -13,6 +13,16 @@ import {HttpModule} from "@angular/http";
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 import {ReactiveFormsModule} from "@angular/forms";
+import { RouterModule, Routes } from '@angular/router';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
+import { AppComponents, AppRoutes } from "./app.routing";
+
+
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -20,7 +30,9 @@ import {ReactiveFormsModule} from "@angular/forms";
     UserComponent,
     PostComponent,
     CommentComponent,
-    TagComponent
+    TagComponent,
+    DashboardComponent,
+
 
   ],
 
@@ -32,6 +44,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     FormsModule,
     HttpModule,
     HttpClientInMemoryWebApiModule,
+    RouterModule,
+     RouterModule.forRoot(AppRoutes)
 
 
 
