@@ -2,10 +2,13 @@ import {Component,  OnInit} from '@angular/core';
 
 
 // @ts-ignore
-import { ROUTER_DIRECTIVES } from '@angular/router';
+import {Router, ROUTER_DIRECTIVES} from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 
 import {userService } from './userService'
+
+
 
 
 
@@ -31,18 +34,30 @@ export class UserComponent implements OnInit {
   constructor(public userService: userService) {
 
 
+
+
   }
+
+  private  router: Router;
+
+
+
 
 
 
   ngOnInit() {
 
+
   }
+
+
+
+
 
 
   user: User = {
 
-    title:'Please Register',
+    title:'Please fill below Information',
     username: '',
     password: '',
     firstName: '',
@@ -54,14 +69,21 @@ export class UserComponent implements OnInit {
 
 
 
+
    register(){
 
     if (!this.user) { return; }
-    console.log(this.user.firstName.toString())
+
+    console.log(this.user.firstName.toString());
+
+
     this.userService.register(this.user)
+
       .subscribe(
         user => this.user,
         error => this.errorMessage = <any>error);
+
+
   }
 
 
