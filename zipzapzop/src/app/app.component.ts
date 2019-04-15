@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { User } from "./user/user";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'zipzapzop';
+  title = 'ZipZapZop Blog';
+
+  constructor(private router: Router) { }
+
+  navigate() {
+    this.router.navigate(["user"]);
+  }
+
+
+
+
 }

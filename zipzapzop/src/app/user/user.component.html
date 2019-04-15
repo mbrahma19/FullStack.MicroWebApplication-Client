@@ -1,0 +1,89 @@
+
+
+
+
+
+<form name="myForm" (ngSubmit)="register()" method="post" ng-controller="builtinValidationCtrl as $ctrl"
+      ng-submit="$ctrl.submit()">
+
+
+
+    <h2>
+      {{user.title}}
+    </h2>
+
+  <br>
+  <br>
+
+
+<div class="form-group"
+  ng-class="{'has-error': form2.name.$touched && form2.name.$invalid}">
+
+  <label>Username:</label>
+  <input [(ngModel)]="user.username"  placeholder="username" name="username" type="text" size="30"  [ngClass]="{ 'is-invalid': submitted }" ng-model="$ctrl.name" ng-pattern="/^[a-zA-Z]+$/"/>
+
+
+
+</div>
+
+  <br>
+<br>
+
+  <div class="form-group" ng-class="{'has-error': form2.pass.$touched && form2.pass.$invalid}">
+  <label>Password: </label>
+    <input [(ngModel)]="user.password" placeholder="password" name="password" type="Password" size="30" [ngClass]="{ 'is-invalid': submitted }" required
+           ng-model="$ctrl.pass"
+           ng-minlength="4"/>
+
+
+    </div>
+
+<br>
+<br>
+
+
+  <div>
+  <label>FirstName:  </label>
+    <input [(ngModel)]="user.firstName"  name="first_name" placeholder="firstName" type="text" size="30"  [ngClass]="{ 'is-invalid': submitted}"/>
+
+    <!--<div *ngIf="user.firstname.errors.required">firstname is required</div>-->
+
+    </div>
+
+<br>
+<br>
+
+
+<div>
+  <label>LastName: </label>
+    <input [(ngModel)]="user.lastName"  name="last_name" placeholder="lastName" type="text" size="30" [ngClass]="{ 'is-invalid': submitted && user.lastname.errors }"/>
+    <!--<div *ngIf="user.lastname.errors.required">lastname is required</div>-->
+
+</div>
+
+<br>
+<br>
+
+
+<div>
+  <label>Email:  </label>
+    <input [(ngModel)]="user.email"  name="email" placeholder="email" type="text" size="30"  [ngClass]="{'is-invalid': submitted && user.email.errors }"/>
+    <!--<div *ngIf="user.lastname.errors.required">email is required</div>-->
+
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<div>
+  <button type="submit"  class="btn btn-default" >Register</button>
+</div>
+
+
+
+</form>
+
+
+
