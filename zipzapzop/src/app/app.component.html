@@ -2,6 +2,16 @@
 <div style="text-align:center">
   <h1>{{ title }}!!!!</h1>
 
-  <app-user></app-user>
+  <p>
+    <a [routerLink]="['user']">Please Register</a>
+  </p>
+
+  <p>
+    <a [routerLink]="['posts']">Posts</a>
+  </p>
+
+  <router-outlet></router-outlet>
+
+  <!-- <app-user></app-user> -->
   <app-tag></app-tag>
 </div>
