@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -18,13 +19,11 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
+import { TagService } from "./tag/tag.service";
+import { Tag } from "./tag/tag";
+import { HttpClientModule } from "@angular/common/http";
+
 import { AppComponents, AppRoutes } from "./app.routing";
-
-
-
-
-
-
 
 @NgModule({
   declarations: [
@@ -32,18 +31,13 @@ import { AppComponents, AppRoutes } from "./app.routing";
     UserComponent,
     PostComponent,
     CommentComponent,
-    TagComponent,
-    DashboardComponent,
-
-
+    TagComponent
   ],
-
-
-
 
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     HttpModule,
     HttpClientInMemoryWebApiModule,
     RouterModule,
@@ -56,8 +50,13 @@ import { AppComponents, AppRoutes } from "./app.routing";
     userService,
     User,
     postService,
-    Post
+    Post,
+    TagService,
+    Tag
+
   ],
+
+
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

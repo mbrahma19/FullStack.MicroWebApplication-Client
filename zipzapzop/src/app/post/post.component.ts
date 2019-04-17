@@ -44,7 +44,11 @@ export class PostComponent implements OnInit {
 
     this.posts=res.json();
 
+
+
     console.table(this.posts)
+
+
   }
 
 
@@ -57,6 +61,7 @@ return this.postService.getmyPosts(this.searchQuery)
 
       .subscribe(data => {
     this.handleSuccess(data);
+
   });
 
 
