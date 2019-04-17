@@ -1,3 +1,25 @@
-<p>
-  post works!
-</p>
+
+
+
+<h2>Available Posts</h2>
+
+
+<input class="search" [(ngModel)]="searchQuery" name="search" placeholder="Search post by tag" value="" ngDefaultControl>
+<br>
+<br>
+
+
+<button (click)="getPosts()" type="button"> Posts</button>
+
+<div *ngFor="let post of posts" class=video-container>
+
+
+  <p class="excerpt"> Title:{{post.title}}</p>
+
+  <p class="excerpt"> {{post.body}}</p>
+
+  <p class="excerpt"> Date:{{post.createDate}}</p>
+
+
+</div>
+

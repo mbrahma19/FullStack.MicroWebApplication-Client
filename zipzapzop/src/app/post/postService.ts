@@ -5,6 +5,9 @@ import {Http, Response} from "@angular/http";
 import { Headers, RequestOptions } from '@angular/http';
 
 import {Observable} from 'rxjs/Observable';
+import { throwError } from 'rxjs';
+
+
 
 
 import {Router, RouterModule, Routes} from '@angular/router';
@@ -19,12 +22,13 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 
-import { User } from './user';
+import { Post } from './post';
+import {map} from "rxjs/operators";
 
 @Injectable()
-export class userService {
+export class postService {
 
-  private userUrl = 'http://localhost:8090/registration';
+  private userUrl = 'http://localhost:8090/posts';
 
 
 
@@ -34,20 +38,22 @@ export class userService {
     this.http = http;
   }
 
-  getProducts(): Observable<User[]> {
+  getPosts(): Observable<Post[]> {
     return this.http.get(this.userUrl)
-      .map((response: Response) => <User[]>response.json())
+      .map((response: Response) => <Post[]>response.json())
       .catch(this.handleError);
+
   }
 
 
 
 
 
-  register(user: User) {
+
+  WritePost(post: Post) {
 
 
-    let body = JSON.stringify( user );
+    let body = JSON.stringify( post );
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
 
@@ -61,23 +67,47 @@ export class userService {
 
 
 
-  private extractData(res: Response) {
-     // let body = res.json();
-     let body = res.toString();
+  getmyPosts(query): Observable<any> {
+    return this.http.get(this.userUrl)
+
+    //   .pipe(
+    //   map(this.extractData)
+    // );
+  }
+
+
+
+
+  extractData(res: Response) {
+    let body = res.json();
+    //let body = res.toString();
+    //
+    //("Access-Control-Allow-Origin", "*");
+
+
 
     let headers = new Headers({ 'Access-Control-Allow-Origin': "*" });
-     // return body.data || {};
+     return body.data || {};
     console.log (body.toString());
 
-   return  body.toString();
+    //return  body.toString();
 
 
   }
 
-  private handleError(error: Response) {
+  handleError(error: Response) {
     console.error(error);
-    return Observable.throw(error.json().error || 'Server Error');
+    return throwError(error.toString() || error);
+
+
+    // Observable.throw(error.json().error || 'Server Error');
   }
+
+
+
+
+
+
 
 
 

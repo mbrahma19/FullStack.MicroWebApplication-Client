@@ -8,7 +8,9 @@ import { CommentComponent } from './comment/comment.component';
 import { TagComponent } from './tag/tag.component';
 import { FormsModule } from '@angular/forms';
 import {userService} from "./user/userService";
+import {postService} from "./post/postService";
 import {User} from "./user/user";
+import {Post} from "./post/post"
 import {HttpModule} from "@angular/http";
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
@@ -52,7 +54,9 @@ import { AppComponents, AppRoutes } from "./app.routing";
   ],
   providers: [
     userService,
-    User
+    User,
+    postService,
+    Post
   ],
   bootstrap: [AppComponent]
 })
