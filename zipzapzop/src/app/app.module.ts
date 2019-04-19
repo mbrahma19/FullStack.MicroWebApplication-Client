@@ -17,13 +17,14 @@ import { InMemoryDataService } from "./in-memory-data.service";
 import { ReactiveFormsModule } from "@angular/forms";
 import { RouterModule, Routes } from "@angular/router";
 // import { DashboardComponent } from './dashboard/dashboard.component';
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 import { TagService } from "./tag/tag.service";
 import { Tag } from "./tag/tag";
 import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponents, AppRoutes } from "./app.routing";
-import { TagDetailComponent } from './tag-detail/tag-detail.component';
+import { TagDetailComponent } from "./tag-detail/tag-detail.component";
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { TagDetailComponent } from './tag-detail/tag-detail.component';
     HttpModule,
     HttpClientInMemoryWebApiModule,
     RouterModule,
-    RouterModule.forRoot(AppRoutes)
+    RouterModule.forRoot(AppRoutes),
+    NgbModule.forRoot()
   ],
   providers: [userService, User, postService, Post, TagService, Tag],
 
