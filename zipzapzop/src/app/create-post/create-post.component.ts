@@ -1,11 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: "app-comment",
-  templateUrl: "./comment.component.html",
+  selector: "app-create-post",
+  templateUrl: "./create-post.component.html",
   styleUrls: ["../app.component.css"]
 })
-export class CommentComponent implements OnInit {
+export class CreatePostComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
