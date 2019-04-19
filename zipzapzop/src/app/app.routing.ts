@@ -4,8 +4,8 @@ import { PostComponent } from "./post/post.component";
 import { CommentComponent } from "./comment/comment.component";
 import { TagComponent } from "./tag/tag.component";
 import { RouterModule, Routes } from "@angular/router";
-import {CreatePostComponent} from "./create-post/create-post.component";
-
+import { TagDetailComponent } from "./tag-detail/tag-detail.component";
+import { CreatePostComponent } from "./create-post/create-post.component";
 
 export const AppRoutes: Routes = [
   { path: "app", component: AppComponent },
@@ -16,7 +16,14 @@ export const AppRoutes: Routes = [
 
   { path: "tags", component: TagComponent },
 
+  { path: "tags/:id", component: TagDetailComponent },
+
   { path: "createPost", component: CreatePostComponent }
 ];
 
-export const AppComponents: any = [AppComponent, UserComponent, PostComponent, CreatePostComponent];
+export const AppComponents: any = [
+  AppComponent,
+  UserComponent,
+  PostComponent,
+  CreatePostComponent
+];

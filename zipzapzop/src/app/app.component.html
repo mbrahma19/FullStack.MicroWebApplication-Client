@@ -1,26 +1,53 @@
 <!--The content below is only a placeholder and can be replaced.-->
+
 <div style="text-align:center">
-  <h1>{{ title }}!!!!</h1>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">ZipZapZop Blog</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarColor01"
+      aria-controls="navbarColor01"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-
-
-
-  <body class="news">
-  <header>
-    <div class="nav">
-      <ul>
-        <li class="user"><a [routerLink]="['user']">Please Register</a></li>
-        <li class="posts"><a [routerLink]="['posts']">Posts</a></li>
-        <li class="tags"><a [routerLink]="['tags']">Tags</a></li>
-        <li class="createPost"><a [routerLink]="['createPost']">Create Post</a></li>
-
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['user']">Please Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['posts']">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['tags']">Tags</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['createPost']">Create Post</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['AboutUs']">About Us</a>
+        </li>
       </ul>
-    </div>
-  </header>
-  </body>
 
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" />
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">
+          Search
+        </button>
+      </form>
+    </div>
+  </nav>
   <router-outlet></router-outlet>
 
   <!-- <app-user></app-user> -->
   <!-- <app-tag></app-tag> -->
+</div>
+
+<div style="text-align:center">
+  <h4>{{ title }}</h4>
 </div>
