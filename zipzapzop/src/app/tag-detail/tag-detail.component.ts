@@ -7,7 +7,7 @@ import { Location } from "@angular/common";
 @Component({
   selector: "app-tag-detail",
   templateUrl: "./tag-detail.component.html",
-  styleUrls: ["./tag-detail.component.css"]
+  styleUrls: ["../app.component.css"]
 })
 export class TagDetailComponent implements OnInit {
   @Input() tag: Tag;
