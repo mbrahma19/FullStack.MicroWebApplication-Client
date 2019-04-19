@@ -5,6 +5,7 @@ import { Post } from './post';
 import {postService}  from './postService';
 import {Router} from "@angular/router";
 import {User} from "../user/user";
+import { DatePipe } from '@angular/common'
 
 @Component({
   selector: 'app-post',
@@ -46,6 +47,7 @@ export class PostComponent implements OnInit {
 
 
 
+
     console.table(this.posts)
 
 
@@ -56,15 +58,6 @@ getPosts(){
 
 
 
-return this.postService.getmyPosts(this.searchQuery)
-
-
-      .subscribe(data => {
-    this.handleSuccess(data);
-
-  });
-
-
 
 }
 
@@ -72,6 +65,20 @@ return this.postService.getmyPosts(this.searchQuery)
 
 
   ngOnInit() {
+
+
+    return this.postService.getmyPosts(this.searchQuery)
+
+
+      .subscribe(data => {
+          this.handleSuccess(data);
+          this.post.createDate = new Date().toLocaleDateString();
+
+        }
+
+      );
+
+
 
 
   }
