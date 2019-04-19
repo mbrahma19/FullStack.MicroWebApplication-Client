@@ -4,11 +4,14 @@
 </li> -->
 
 <h3>Top Tags</h3>
+<h4>{{ tag.keyWord }}</h4>
 <div class="grid grid-pad">
-  <a *ngFor="let tag of tags" class="col-1-4" routerLink="/tags/{{ tag.id }}">
+  <a *ngFor="let tag of tags" routerLink="/tags/{{ tag.id }}">
     <!-- <div class="module tag"> -->
-    <button type="button" class="btn btn-primary">{{ tag.keyWord }}</button>
-    <!-- <h4>{{ tag.keyWord }}</h4> -->
+    <button type="button" class="btn btn-primary btn-lg">
+      {{ tag.keyWord }}
+    </button>
+
     <!-- </div> -->
   </a>
 </div>
