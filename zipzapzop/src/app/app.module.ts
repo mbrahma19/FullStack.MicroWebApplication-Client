@@ -24,6 +24,7 @@ import { Tag } from "./tag/tag";
 import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponents, AppRoutes } from "./app.routing";
+import { CreatePostComponent } from './create-post/create-post.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AppComponents, AppRoutes } from "./app.routing";
     UserComponent,
     PostComponent,
     CommentComponent,
-    TagComponent
+    TagComponent,
+    CreatePostComponent
   ],
 
   imports: [
@@ -53,6 +55,7 @@ import { AppComponents, AppRoutes } from "./app.routing";
     Post,
     TagService,
     Tag
+
 
   ],
 
