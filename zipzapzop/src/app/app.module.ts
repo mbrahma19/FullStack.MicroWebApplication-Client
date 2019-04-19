@@ -24,11 +24,8 @@ import { Tag } from "./tag/tag";
 import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponents, AppRoutes } from "./app.routing";
-<<<<<<< HEAD
 import { TagDetailComponent } from "./tag-detail/tag-detail.component";
-=======
-import { CreatePostComponent } from './create-post/create-post.component';
->>>>>>> upstream/dev
+import { CreatePostComponent } from "./create-post/create-post.component";
 
 @NgModule({
   declarations: [
@@ -37,11 +34,8 @@ import { CreatePostComponent } from './create-post/create-post.component';
     PostComponent,
     CommentComponent,
     TagComponent,
-<<<<<<< HEAD
-    TagDetailComponent
-=======
+    TagDetailComponent,
     CreatePostComponent
->>>>>>> upstream/dev
   ],
 
   imports: [
@@ -51,25 +45,8 @@ import { CreatePostComponent } from './create-post/create-post.component';
     HttpModule,
     HttpClientInMemoryWebApiModule,
     RouterModule,
-<<<<<<< HEAD
     RouterModule.forRoot(AppRoutes),
     NgbModule.forRoot()
-=======
-     RouterModule.forRoot(AppRoutes)
-
-
-
-  ],
-  providers: [
-    userService,
-    User,
-    postService,
-    Post,
-    TagService,
-    Tag
-
-
->>>>>>> upstream/dev
   ],
   providers: [userService, User, postService, Post, TagService, Tag],
 
