@@ -1,0 +1,9 @@
+
+  <div *ngIf="post" class="jumbotron">
+      <h1 class="display-3">{{post.title}}</h1>
+      <p class="lead">Created on :{{post.createDate | date : 'yyyy-MM-dd'}}</p>
+      <hr class="my-4">
+      <p>{{post.body}}</p>
+      <p class="lead">
+          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </div>
