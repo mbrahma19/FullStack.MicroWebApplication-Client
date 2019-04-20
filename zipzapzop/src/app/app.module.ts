@@ -27,6 +27,7 @@ import { AppComponents, AppRoutes } from "./app.routing";
 import { TagDetailComponent } from "./tag-detail/tag-detail.component";
 import { CreatePostComponent } from "./create-post/create-post.component";
 import { PostDetailComponent } from './post-detail/post-detail.component';
+import { SinglePostComponent } from './single-post/single-post.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
     TagComponent,
     TagDetailComponent,
     CreatePostComponent,
-    PostDetailComponent
+    PostDetailComponent,
+    SinglePostComponent
   ],
 
   imports: [
