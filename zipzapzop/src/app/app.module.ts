@@ -26,6 +26,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { AppComponents, AppRoutes } from "./app.routing";
 import { TagDetailComponent } from "./tag-detail/tag-detail.component";
 import { CreatePostComponent } from "./create-post/create-post.component";
+import { PostDetailComponent } from './post-detail/post-detail.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { CreatePostComponent } from "./create-post/create-post.component";
     CommentComponent,
     TagComponent,
     TagDetailComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    PostDetailComponent
   ],
 
   imports: [
