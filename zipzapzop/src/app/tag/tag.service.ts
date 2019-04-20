@@ -29,4 +29,9 @@ export class TagService {
     const url = `${this.tagsUrl}/${id}`;
     return this.http.get<Tag>(url);
   }
+
+  getPosts(id: number): any {
+    const url = `${this.tagsUrl}/${id}/posts`;
+    return this.http.get<any>(url);
+  }
 }

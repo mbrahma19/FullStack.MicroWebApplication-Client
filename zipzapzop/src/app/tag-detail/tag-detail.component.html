@@ -1,10 +1,11 @@
 <div *ngIf="tag">
-  <h2>{{ tag.keyWord | uppercase }} Details</h2>
-  <div><span>id: </span>{{ tag.id }}</div>
-  <div>
-    <div><span>keyword: </span>{{ tag.keyWord }}</div>
-    <div><span>posts: </span>{{ tag.posts }}</div>
-  </div>
-
+  <h2>{{ tag.keyWord | uppercase }}</h2>
   <button class="btn btn-secondary" (click)="goBack()">go back</button>
+  <div *ngFor="let post of posts" class="jumbotron">
+    <h1 class="display-3">{{ post.title }}</h1>
+    <p class="lead">Created on :{{ post.createDate | date: "yyyy-MM-dd" }}</p>
+    <hr class="my-4" />
+    <p>{{ post.body }}</p>
+  </div>
+  <button class="btn btn-secondary" (click)="goBack()">Go Back</button>
 </div>
