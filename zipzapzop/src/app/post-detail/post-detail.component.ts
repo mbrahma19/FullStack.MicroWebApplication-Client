@@ -1,14 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { postService } from '../post/postService';
+import { Post } from '../post/post';
 
 @Component({
   selector: 'app-post-detail',
   templateUrl: './post-detail.component.html',
-  styleUrls: ['./post-detail.component.css']
+  styleUrls: ['../app.component.css']
 })
 export class PostDetailComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private postservice : postService) { }
+  @Input() post: Post;
+  
   ngOnInit() {
   }
 
