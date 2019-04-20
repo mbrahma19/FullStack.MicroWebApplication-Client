@@ -16,7 +16,6 @@ import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
 import { InMemoryDataService } from "./in-memory-data.service";
 import { ReactiveFormsModule } from "@angular/forms";
 import { RouterModule, Routes } from "@angular/router";
-// import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 import { TagService } from "./tag/tag.service";
@@ -26,8 +25,9 @@ import { HttpClientModule } from "@angular/common/http";
 import { AppComponents, AppRoutes } from "./app.routing";
 import { TagDetailComponent } from "./tag-detail/tag-detail.component";
 import { CreatePostComponent } from "./create-post/create-post.component";
-import { PostDetailComponent } from './post-detail/post-detail.component';
-import { TagSelectionComponent } from './tag-selection/tag-selection.component';
+import { PostDetailComponent } from "./post-detail/post-detail.component";
+import { TagSelectionComponent } from "./tag-selection/tag-selection.component";
+import { SinglePostComponent } from "./single-post/single-post.component";
 
 @NgModule({
   declarations: [
@@ -39,7 +39,8 @@ import { TagSelectionComponent } from './tag-selection/tag-selection.component';
     TagDetailComponent,
     CreatePostComponent,
     PostDetailComponent,
-    TagSelectionComponent
+    TagSelectionComponent,
+    SinglePostComponent
   ],
 
   imports: [

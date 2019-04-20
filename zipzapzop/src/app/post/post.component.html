@@ -3,10 +3,9 @@
 
 <h2>Available Posts</h2>
 
-<ul *ngFor="let post of posts" class="jumbotron">
+<div *ngFor="let post of posts" class="jumbotron">
     <app-post-detail [post] = post></app-post-detail>
-</ul>
-
-<!-- <app-post-detail></app-post-detail>> -->
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+</div>
 
 
