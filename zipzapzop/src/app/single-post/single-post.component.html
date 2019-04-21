@@ -1,3 +1,4 @@
-<p>
-  single-post works!
-</p>
+<div *ngIf="post">
+    <app-post-detail [post] = post></app-post-detail>
+    <button class = "btn btn-secondary" (click)="goBack()"> Go Back</button>
+</div>

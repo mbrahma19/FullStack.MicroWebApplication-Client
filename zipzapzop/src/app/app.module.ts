@@ -28,6 +28,7 @@ import { TagDetailComponent } from "./tag-detail/tag-detail.component";
 import { CreatePostComponent } from "./create-post/create-post.component";
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { SinglePostComponent } from './single-post/single-post.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { SinglePostComponent } from './single-post/single-post.component';
     TagDetailComponent,
     CreatePostComponent,
     PostDetailComponent,
-    SinglePostComponent
+    SinglePostComponent,
+    FooterComponent
   ],
 
   imports: [

@@ -1,6 +1,7 @@
 import {Injectable}   from '@angular/core';
 
 import {Http, Response} from "@angular/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 
 import { Headers, RequestOptions } from '@angular/http';
 
@@ -25,17 +26,21 @@ import 'rxjs/add/operator/catch';
 import { Post } from './post';
 import {map} from "rxjs/operators";
 
+const httpOptions = {
+  headers: new HttpHeaders({ "Content-Type": "application/json" })
+ };
+
 @Injectable()
 export class postService {
 
   private userUrl = 'http://localhost:8090/posts';
 
-
-
   private http: Http;
+  private httpClient: HttpClient;
 
-  constructor(http: Http) {
+  constructor(http: Http, httpClient: HttpClient) {
     this.http = http;
+    this.httpClient = httpClient;
   }
 
   getPosts(): Observable<Post[]> {
@@ -45,14 +50,12 @@ export class postService {
 
   }
 
-
-
-
-
+  getSinglePost(id: number): Observable<any>{
+    const url = `${this.userUrl}/${id}`;
+    return this.httpClient.get<Post>(url);
+  }
 
   WritePost(post: Post) {
-
-
     let body = JSON.stringify( post );
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
@@ -64,43 +67,20 @@ export class postService {
       .catch(this.handleError);
   }
 
-
-
-
-  getmyPosts(query): Observable<any> {
+  getmyPosts(): Observable<any> {
     return this.http.get(this.userUrl)
-
-    //   .pipe(
-    //   map(this.extractData)
-    // );
   }
-
-
-
 
   extractData(res: Response) {
     let body = res.json();
-    //let body = res.toString();
-    //
-    //("Access-Control-Allow-Origin", "*");
-
-
-
     let headers = new Headers({ 'Access-Control-Allow-Origin': "*" });
      return body.data || {};
     console.log (body.toString());
-
-    //return  body.toString();
-
-
   }
 
   handleError(error: Response) {
     console.error(error);
     return throwError(error.toString() || error);
-
-
-    // Observable.throw(error.json().error || 'Server Error');
   }
 
 
