@@ -7,7 +7,7 @@ import { User } from '../user/user';
 @Component({
   selector: 'app-edit-post',
   templateUrl: './edit-post.component.html',
-  styleUrls: ['./edit-post.component.css']
+  styleUrls: ["../app.component.css"]
 })
 export class EditPostComponent implements OnInit {
   post : Post = new Post();

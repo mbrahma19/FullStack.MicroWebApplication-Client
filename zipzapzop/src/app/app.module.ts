@@ -39,7 +39,7 @@ import { SinglePostComponent } from './single-post/single-post.component';
     TagComponent,
     TagDetailComponent,
     CreatePostComponent,
-    EditPostComponent
+    EditPostComponent,
     PostDetailComponent,
     SinglePostComponent
   ],
