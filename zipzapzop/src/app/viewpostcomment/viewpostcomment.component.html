@@ -1,0 +1,9 @@
+
+<div *ngFor="let viewcomment of comments"  class="jumbotron" >
+  <h4 class="display-3">{{viewcomment.body}}</h4>
+  <p class="lead">Created on :{{ viewcomment.creationDate}}</p>
+  <button class="btn btn-secondary" routerLink="/comments/{{viewcomment.id }}"(click)=btnClick()>Edit</button>
+  <a routerLink= "/comments/{{viewcomment.id }}"> Edit</a>
+  <button class="btn btn-secondary"  (click)=btnClickCreate()>Create</button>
+
+</div>
