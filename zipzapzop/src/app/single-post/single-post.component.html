@@ -1,4 +1,8 @@
 <div *ngIf="post">
-    <app-post-detail [post] = post></app-post-detail>
     <button class = "btn btn-secondary" (click)="goBack()"> Go Back</button>
+    <app-post-detail [post] = post></app-post-detail>
+    <app-createcomment>
+            <button class = "btn btn-secondary" (click)="goBack()"> Go Back</button>
+    </app-createcomment>
+    <app-viewpostcomment></app-viewpostcomment>
 </div>

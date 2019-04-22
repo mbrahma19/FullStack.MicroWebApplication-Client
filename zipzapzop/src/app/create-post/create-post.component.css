@@ -1,3 +1,10 @@
+
+
+textarea {
+  width: 50px;
+  height: 150px;
+}
+
 .post_body {
     width: 80%;
 }
