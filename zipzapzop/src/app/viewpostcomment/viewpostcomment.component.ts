@@ -17,7 +17,7 @@ import {Post} from "../post/post";
 @Component({
   selector: 'app-viewpostcomment',
   templateUrl: './viewpostcomment.component.html',
-  styleUrls: ['./viewpostcomment.component.css']
+  styleUrls: ['../app.component.css']
 })
 export class ViewpostcommentComponent implements OnInit {
 

@@ -1,0 +1,25 @@
+<h3>Add Tags to Post</h3>
+
+<div class="grid grid-pad">
+  <a *ngFor="let tag of tags">
+    <button class="btn btn-info" (click)="addTagToPostOnClick(tag.id, 1)">
+      {{ tag.keyWord }} - Add Tag to Post
+    </button>
+    <!-- <button type="button" class="btn btn-secondary btn-lg"> -->
+  </a>
+</div>
+
+<!-- <form>
+  <fieldset>
+    <fieldset class="form-group">
+      <legend>Radio buttons</legend>
+      <a *ngFor="let tag of tags" class="form-check">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" value="" checked="" />
+          {{ tag.keyWord }}
+        </label>
+      </a>
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </fieldset>
+</form> -->

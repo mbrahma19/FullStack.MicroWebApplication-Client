@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
-import { Post } from '../post/post';
-import { postService } from '../post/postService';
-import { User } from '../user/user';
-import { Router } from '@angular/router';
+import { Post } from "../post/post";
+import { postService } from "../post/postService";
+import { User } from "../user/user";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-create-post",
@@ -10,13 +10,12 @@ import { Router } from '@angular/router';
   styleUrls: ["../app.component.css"]
 })
 export class CreatePostComponent implements OnInit {
-  post : Post = new Post();
+  post: Post = new Post();
 
-  constructor(private service : postService, private router : Router) {
-
-  }
+  constructor(private service: postService, private router: Router) {}
 
   ngOnInit() {}
+
 
   submit(){
     if(!this.post){
@@ -35,6 +34,5 @@ export class CreatePostComponent implements OnInit {
       this.post = post;
       this.router.navigate(['/posts']);
     });
-    
   }
 }
