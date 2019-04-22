@@ -15,4 +15,9 @@ export class TagSelectionComponent implements OnInit {
       this.tags = data;
     });
   }
+
+  addTagToPostOnClick(tagId: number, postId: number) {
+    console.log("here");
+    this.tagService.addTagsToPost(tagId, postId);
+  }
 }
