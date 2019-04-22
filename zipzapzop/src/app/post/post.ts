@@ -4,6 +4,7 @@
 
 export class Post {
 
+  id:Number;
   title1:String;
   title:String;
   body: String;

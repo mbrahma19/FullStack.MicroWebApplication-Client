@@ -6,7 +6,12 @@ import { TagComponent } from "./tag/tag.component";
 import { RouterModule, Routes } from "@angular/router";
 import { TagDetailComponent } from "./tag-detail/tag-detail.component";
 import { CreatePostComponent } from "./create-post/create-post.component";
-import { EditPostComponent } from './edit-post/edit-post.component';
+import { TagSelectionComponent } from "./tag-selection/tag-selection.component";
+import { SinglePostComponent } from "./single-post/single-post.component";
+import { ViewpostcommentComponent } from "./viewpostcomment/viewpostcomment.component";
+import { EditcommentComponent } from "./editcomment/editcomment.component";
+import { CreatecommentComponent } from "./createcomment/createcomment.component";
+import { EditPostComponent } from "./edit-post/edit-post.component";
 
 export const AppRoutes: Routes = [
   { path: "app", component: AppComponent },
@@ -20,8 +25,18 @@ export const AppRoutes: Routes = [
   { path: "tags/:id", component: TagDetailComponent },
 
   { path: "createPost", component: CreatePostComponent },
-  
-  { path: "posts/:id/edit", component: EditPostComponent}
+
+  { path: "posts/tags/:id", component: TagSelectionComponent },
+
+  { path: "posts/:id", component: SinglePostComponent },
+
+  { path: "comments", component: ViewpostcommentComponent },
+
+  { path: "createcomment", component: CreatecommentComponent },
+
+  { path: "comments/:id", component: EditcommentComponent },
+
+  { path: "posts/:id/edit", component: EditPostComponent }
 ];
 
 export const AppComponents: any = [
@@ -29,5 +44,9 @@ export const AppComponents: any = [
   UserComponent,
   PostComponent,
   CreatePostComponent,
+  SinglePostComponent,
+  ViewpostcommentComponent,
+  EditcommentComponent,
+  CreatecommentComponent,
   EditPostComponent
 ];
