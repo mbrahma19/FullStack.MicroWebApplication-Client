@@ -7,6 +7,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { TagDetailComponent } from "./tag-detail/tag-detail.component";
 import { CreatePostComponent } from "./create-post/create-post.component";
 import { SinglePostComponent } from './single-post/single-post.component';
+import { EditPostComponent } from './edit-post/edit-post.component';
 
 export const AppRoutes: Routes = [
   { path: "app", component: AppComponent },
@@ -21,7 +22,9 @@ export const AppRoutes: Routes = [
 
   { path: "createPost", component: CreatePostComponent },
 
-  { path: "posts/:id", component: SinglePostComponent }
+  { path: "posts/:id", component: SinglePostComponent },
+  
+  { path: "posts/:id/edit", component: EditPostComponent}
 ];
 
 export const AppComponents: any = [
@@ -29,5 +32,6 @@ export const AppComponents: any = [
   UserComponent,
   PostComponent,
   CreatePostComponent,
-  SinglePostComponent
+  SinglePostComponent,
+  EditPostComponent
 ];

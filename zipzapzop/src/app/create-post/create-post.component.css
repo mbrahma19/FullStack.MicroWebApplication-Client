@@ -1,0 +1,8 @@
+.post_body {
+    width: 80%;
+}
+
+textarea, input, .form-control[_ngcontent-c1] {
+    width: 80%;
+}
+

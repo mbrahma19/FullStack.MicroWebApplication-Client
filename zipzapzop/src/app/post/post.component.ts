@@ -15,6 +15,17 @@ import { DatePipe } from "@angular/common";
 export class PostComponent implements OnInit {
   constructor(public postService: postService) {}
 
+  post : Post;
+  // post: Post = {
+  //   title1: "Our Universal Blogs",
+  //   title: "",         
+  //   body: "",
+  //   createDate: "",
+  //   tags: "",
+  //   //user: new User()
+  // };
+
+  private router: Router;
   errorMessage: string;
   posts: any[];
 
