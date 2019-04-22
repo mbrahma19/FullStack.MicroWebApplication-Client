@@ -17,10 +17,11 @@ export class PostComponent implements OnInit {
 
   post: Post = {
     title1: "Our Universal Blogs",
-    title: "",
+    title: "",         
     body: "",
     createDate: "",
-    tags: ""
+    tags: "",
+    //user: new User()
   };
 
   private router: Router;
