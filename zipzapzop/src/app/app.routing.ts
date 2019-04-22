@@ -26,8 +26,10 @@ export const AppRoutes: Routes = [
   { path: "createPost", component: CreatePostComponent },
 
   { path: "posts/:id", component: SinglePostComponent },
+
+  { path: "posts/:id", component: ViewpostcommentComponent },
   
-  { path: "comments", component: ViewpostcommentComponent },
+  // { path: "comments", component: ViewpostcommentComponent },
 
   { path: "createcomment", component:CreatecommentComponent },
 

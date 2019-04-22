@@ -28,7 +28,6 @@ export class ViewpostcommentComponent implements OnInit {
   constructor(
     private viewcommentService: ViewcommentService,
     private route: ActivatedRoute,
-    private route1: Router,
   ) { }
 
   ngOnInit() {
@@ -51,9 +50,9 @@ export class ViewpostcommentComponent implements OnInit {
 
   getComments(): void {
 
-    // const id = +this.route.snapshot.paramMap.get("id");
+    const id = +this.route.snapshot.paramMap.get("id");
     this.viewcommentService
-      .getComments(2)
+      .getComments(id)
       .subscribe((comments: Comment[]) => (this.comments = comments));
   }
 
