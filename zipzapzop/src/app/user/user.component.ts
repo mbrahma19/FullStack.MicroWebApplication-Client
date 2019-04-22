@@ -33,7 +33,8 @@ export class UserComponent implements OnInit {
     password: "",
     firstName: "",
     lastName: "",
-    email: ""
+    email: "",
+    // id: 0 
   };
 
   register() {

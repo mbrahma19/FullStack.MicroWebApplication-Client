@@ -25,9 +25,19 @@ import { HttpClientModule } from "@angular/common/http";
 import { AppComponents, AppRoutes } from "./app.routing";
 import { TagDetailComponent } from "./tag-detail/tag-detail.component";
 import { CreatePostComponent } from "./create-post/create-post.component";
-import { PostDetailComponent } from "./post-detail/post-detail.component";
 import { TagSelectionComponent } from "./tag-selection/tag-selection.component";
+import { ViewpostcommentComponent } from "./viewpostcomment/viewpostcomment.component";
+import { Viewcomment } from "./viewpostcomment/viewcomment";
+import { ViewcommentService } from "./viewpostcomment/viewcomment.service";
+import { EditcommentComponent } from "./editcomment/editcomment.component";
+import { CreatecommentComponent } from "./createcomment/createcomment.component";
+import { Comment } from "./createcomment/comment";
+import { commentService } from "./createcomment/commentService";
+import { EditcommentService } from "./editcomment/editcommentService";
+import { EditPostComponent } from "./edit-post/edit-post.component";
+import { PostDetailComponent } from "./post-detail/post-detail.component";
 import { SinglePostComponent } from "./single-post/single-post.component";
+import { FooterComponent } from "./footer/footer.component";
 
 @NgModule({
   declarations: [
@@ -38,9 +48,14 @@ import { SinglePostComponent } from "./single-post/single-post.component";
     TagComponent,
     TagDetailComponent,
     CreatePostComponent,
+    ViewpostcommentComponent,
+    EditcommentComponent,
+    EditPostComponent,
     PostDetailComponent,
     TagSelectionComponent,
-    SinglePostComponent
+    SinglePostComponent,
+    CreatecommentComponent,
+    FooterComponent
   ],
 
   imports: [
@@ -53,7 +68,19 @@ import { SinglePostComponent } from "./single-post/single-post.component";
     RouterModule.forRoot(AppRoutes),
     NgbModule.forRoot()
   ],
-  providers: [userService, User, postService, Post, TagService, Tag],
+  providers: [
+    userService,
+    User,
+    postService,
+    Post,
+    TagService,
+    Tag,
+    Viewcomment,
+    ViewcommentService,
+    Comment,
+    commentService,
+    EditcommentService
+  ],
 
   bootstrap: [AppComponent]
 })

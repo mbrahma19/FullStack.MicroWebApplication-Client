@@ -26,7 +26,7 @@ export class CreatePostComponent implements OnInit {
     console.log(this.post);
 
     //send the post to the BE server
-    //telling ther service to tell the server to create the post
+    //telling the service to tell the server to create the post
     this.service.WritePost(this.post).subscribe(x => this.router.navigate(['/posts']));
   }
 }
