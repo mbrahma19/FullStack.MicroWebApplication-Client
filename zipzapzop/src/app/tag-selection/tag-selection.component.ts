@@ -4,7 +4,7 @@ import { TagService } from "../tag/tag.service";
 @Component({
   selector: "app-tag-selection",
   templateUrl: "./tag-selection.component.html",
-  styleUrls: ["./tag-selection.component.css"]
+  styleUrls: ["../app.component.css"]
 })
 export class TagSelectionComponent implements OnInit {
   tags: Array<any>;
@@ -18,6 +18,8 @@ export class TagSelectionComponent implements OnInit {
 
   addTagToPostOnClick(tagId: number, postId: number) {
     console.log("here");
-    this.tagService.addTagsToPost(tagId, postId);
+    this.tagService
+      .addTagsToPost(tagId, postId)
+      .subscribe(data => console.log(data));
   }
 }
