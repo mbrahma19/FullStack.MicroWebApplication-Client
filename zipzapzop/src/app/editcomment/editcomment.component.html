@@ -1,0 +1,21 @@
+<form  (ngSubmit)= submiteditedCommentonPost()>
+  <div>
+    <table border="0" align="center" width="600">
+      <tr>
+        <td>
+
+          <label> Comment</label>
+
+          <label for="comment_body"></label><textarea rows="1" cols="2" type="body" width=50 class="form-control" id="comment_body"
+                                                      required
+                                                      [(ngModel)]= "comment.body" name ="comment">
+   </textarea>
+
+        </td>
+      </tr>
+    </table>
+  </div>
+
+
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>

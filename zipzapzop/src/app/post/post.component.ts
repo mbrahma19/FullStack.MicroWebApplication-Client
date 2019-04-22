@@ -15,18 +15,19 @@ import { DatePipe } from "@angular/common";
 export class PostComponent implements OnInit {
   constructor(public postService: postService) {}
 
-  post: Post = {
-    title1: "Our Universal Blogs",
-    title: "",
-    body: "",
-    createDate: "",
-    tags: ""
-  };
+  post : Post;
+  // post: Post = {
+  //   title1: "Our Universal Blogs",
+  //   title: "",         
+  //   body: "",
+  //   createDate: "",
+  //   tags: "",
+  //   //user: new User()
+  // };
 
   private router: Router;
   errorMessage: string;
   posts: any[];
-  searchQuery = "";
 
   handleSuccess(res) {
     this.posts = res.json();
@@ -34,15 +35,11 @@ export class PostComponent implements OnInit {
     console.table(this.posts);
   }
 
-  getPosts() {}
-
   ngOnInit() {
     return this.postService
-      .getmyPosts(this.searchQuery)
-
+      .getmyPosts()
       .subscribe(data => {
         this.handleSuccess(data);
-        this.post.createDate = new Date().toLocaleDateString();
       });
   }
 }
