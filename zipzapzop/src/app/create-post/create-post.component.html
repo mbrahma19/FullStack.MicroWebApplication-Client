@@ -1,20 +1,33 @@
-
-
 <form (ngSubmit)="submit()" #postForm="ngForm">
   <div class="form-group">
     <label for="post_title">Title</label>
-    <input type="text" class="form-control" id="post_title"
-           required
-           [(ngModel)]="post.title" name="title" />
-   </div>
+    <input
+      type="text"
+      class="form-control"
+      id="post_title"
+      required
+      [(ngModel)]="post.title"
+      name="title"
+    />
+  </div>
 
-   <div class="form-group">
+  <div class="form-group">
     <label for="post_body">Body</label>
-    <textarea class="form-control" type="body" rows="3" id="post_body"
-    required
-    [(ngModel)]="post.body" name="body"></textarea>
-    </div>
-    
-  <button type="submit" class="btn btn-success">Submit</button>
-</form> 
+    <textarea
+      class="form-control"
+      type="body"
+      rows="3"
+      id="post_body"
+      required
+      [(ngModel)]="post.body"
+      name="body"
+    ></textarea>
+  </div>
+  <app-tag-selection>[tag]="tag"</app-tag-selection>
 
+  <button type="submit" class="btn btn-success">Submit</button>
+  <!-- <a *ngFor="let tag of tags" routerLink="posts/{{post.id}}/tags/{{ tag.id }}"> -->
+  <!-- <button type="button" class="btn btn-secondary btn-lg">
+    
+  <button type="submit" class="btn btn-success">Submit</button> -->
+</form>

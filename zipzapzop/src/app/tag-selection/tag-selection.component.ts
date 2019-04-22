@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { TagService } from "../tag/tag.service";
 
 @Component({
-  selector: 'app-tag-selection',
-  templateUrl: './tag-selection.component.html',
-  styleUrls: ['./tag-selection.component.css']
+  selector: "app-tag-selection",
+  templateUrl: "./tag-selection.component.html",
+  styleUrls: ["./tag-selection.component.css"]
 })
 export class TagSelectionComponent implements OnInit {
-
-  constructor() { }
+  tags: Array<any>;
+  constructor(private tagService: TagService) {}
 
   ngOnInit() {
+    this.tagService.getTags().subscribe(data => {
+      this.tags = data;
+    });
   }
-
 }

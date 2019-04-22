@@ -1,3 +1,8 @@
-<p>
-  tag-selection works!
-</p>
+<h3>Add Tags to Post</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let tag of tags" routerLink="posts/tags/{{ tag.id }}">
+    <button type="button" class="btn btn-secondary btn-lg">
+      {{ tag.keyWord }}
+    </button>
+  </a>
+</div>
