@@ -1,3 +1,4 @@
+//import { User } from '../user/user';
 
 
 
@@ -10,6 +11,8 @@ export class Post {
   createDate: String;
 
   tags: String;
+
+
 
 
 }

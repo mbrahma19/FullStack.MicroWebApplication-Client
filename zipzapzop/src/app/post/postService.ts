@@ -45,6 +45,23 @@ export class postService {
 
   }
 
+  getPost(id): Observable<Post> {
+    return this.http.get(this.userUrl + "/" + id)
+      .map((response: Response) => <Post>response.json())
+      .catch(this.handleError);
+
+  }
+  updatePost(post: Post) {
+
+
+    let body = JSON.stringify( post );
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+
+    console.log(body.toString());
+
+    return this.http.put(this.userUrl, body, options);
+  }
 
 
 
@@ -59,9 +76,9 @@ export class postService {
 
     console.log(body.toString());
 
-    return this.http.post(this.userUrl, body, options)
-      .map(this.extractData)
-      .catch(this.handleError);
+    return this.http.post(this.userUrl, body, options);
+      // .map(this.extractData)
+      // .catch(this.handleError);
   }
 
 

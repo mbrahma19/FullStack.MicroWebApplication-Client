@@ -34,6 +34,10 @@ import { CreatecommentComponent } from './createcomment/createcomment.component'
 import {Comment} from "./createcomment/comment";
 import {commentService} from "./createcomment/commentService";
 import {EditcommentService} from "./editcomment/editcommentService";
+import { EditPostComponent } from './edit-post/edit-post.component';
+import { PostDetailComponent } from './post-detail/post-detail.component';
+import { SinglePostComponent } from './single-post/single-post.component';
+
 
 @NgModule({
   declarations: [
@@ -46,7 +50,9 @@ import {EditcommentService} from "./editcomment/editcommentService";
     CreatePostComponent,
     ViewpostcommentComponent,
     EditcommentComponent,
-    CreatecommentComponent
+    EditPostComponent,
+    PostDetailComponent,
+    SinglePostComponent
   ],
 
   imports: [

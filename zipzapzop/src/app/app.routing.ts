@@ -9,6 +9,7 @@ import { CreatePostComponent } from "./create-post/create-post.component";
 import { ViewpostcommentComponent } from "./viewpostcomment/viewpostcomment.component";
 import { EditcommentComponent } from "./editcomment/editcomment.component";
 import { CreatecommentComponent } from "./createcomment/createcomment.component";
+import { EditPostComponent } from './edit-post/edit-post.component';
 
 export const AppRoutes: Routes = [
   { path: "app", component: AppComponent },
@@ -29,6 +30,7 @@ export const AppRoutes: Routes = [
 
   { path: "comments/:id", component: EditcommentComponent },
 
+  { path: "posts/:id/edit", component: EditPostComponent}
 ];
 
 export const AppComponents: any = [
@@ -38,5 +40,6 @@ export const AppComponents: any = [
   CreatePostComponent,
   ViewpostcommentComponent,
   EditcommentComponent,
-  CreatecommentComponent
+  CreatecommentComponent,
+  EditPostComponent
 ];
