@@ -62,9 +62,9 @@ export class postService {
 
     console.log(body.toString());
 
-    return this.http.post(this.userUrl, body, options);
-      // .map(this.extractData)
-      // .catch(this.handleError);
+    return this.http.post(this.userUrl, body, options)
+    .map(this.extractData)
+    .catch(this.handleError);
   }
 
   getmyPosts(): Observable<any> {

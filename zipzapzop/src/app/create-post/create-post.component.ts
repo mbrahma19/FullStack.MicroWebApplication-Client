@@ -19,6 +19,9 @@ export class CreatePostComponent implements OnInit {
   ngOnInit() {}
 
   submit(){
+    if(!this.post){
+      return;
+    }
     //change it to logged in user
     let user = new User();
     // user.id = 1;
@@ -27,6 +30,11 @@ export class CreatePostComponent implements OnInit {
 
     //send the post to the BE server
     //telling the service to tell the server to create the post
-    this.service.WritePost(this.post).subscribe(x => this.router.navigate(['/posts']));
+    // this.service.WritePost(this.post).subscribe(x => this.router.navigate(['/posts'] ));
+    this.service.WritePost(this.post).subscribe(post => {
+      this.post = post;
+      this.router.navigate(['/posts']);
+    });
+    
   }
 }

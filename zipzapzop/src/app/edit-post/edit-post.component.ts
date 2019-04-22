@@ -26,7 +26,7 @@ export class EditPostComponent implements OnInit {
   submit(){
     let user = new User();
     console.log(this.post);
-    this.service.updatePost(this.post).subscribe(x => this.router.navigate(['/posts']));
+    this.service.updatePost(this.post).subscribe(x => this.router.navigate(['/posts/' + this.id]));
   }
 
 }
