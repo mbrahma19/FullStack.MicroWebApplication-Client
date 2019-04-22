@@ -16,17 +16,23 @@ export class TagSelectionComponent implements OnInit {
     });
   }
 
-  addTagToPostOnClick(tagId: number, postId: number) {
-    console.log("here");
+  onChange(tagId: number, postId: number) {
     if (!this.isChecked) {
-      this.tagService
-        .addTagsToPost(tagId, postId)
-        .subscribe(data => console.log(data));
-      this.isChecked = true;
+      this.addTagToPostOnClick(tagId, postId);
+      console.log(this.isChecked);
     } else {
       this.removeTagFromPostOnClick(tagId, postId);
+      console.log(this.isChecked);
     }
   }
+
+  addTagToPostOnClick(tagId: number, postId: number) {
+    this.tagService
+      .addTagsToPost(tagId, postId)
+      .subscribe(data => console.log(data));
+    this.isChecked = true;
+  }
+
   removeTagFromPostOnClick(tagId: number, postId: number) {
     this.tagService
       .removeTagFromPost(tagId, postId)
