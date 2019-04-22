@@ -37,6 +37,7 @@ import {EditcommentService} from "./editcomment/editcommentService";
 import { EditPostComponent } from './edit-post/edit-post.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { SinglePostComponent } from './single-post/single-post.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -52,7 +53,9 @@ import { SinglePostComponent } from './single-post/single-post.component';
     EditcommentComponent,
     EditPostComponent,
     PostDetailComponent,
-    SinglePostComponent
+    SinglePostComponent,
+    CreatecommentComponent,
+    FooterComponent
   ],
 
   imports: [
