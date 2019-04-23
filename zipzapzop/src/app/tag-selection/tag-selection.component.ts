@@ -6,7 +6,9 @@ import { Post } from "../post/post";
 @Component({
   selector: "app-tag-selection",
   templateUrl: "./tag-selection.component.html",
-  styleUrls: ["../app.component.css"]
+  styleUrls: ["../app.component.css",
+ 
+]
 })
 export class TagSelectionComponent implements OnInit {
   tags: Array<any>;
