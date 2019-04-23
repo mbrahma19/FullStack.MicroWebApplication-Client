@@ -37,7 +37,7 @@ export class postService {
     return this.httpClient.get<Post>(url);
   }
 
-  getPost(id): Observable<Post> {
+  getPost(id:Number): Observable<Post> {
     return this.http.get(this.userUrl + "/" + id)
       .map((response: Response) => <Post>response.json())
       .catch(this.handleError);
@@ -62,9 +62,9 @@ export class postService {
 
     console.log(body.toString());
 
-    return this.http.post(this.userUrl, body, options);
-      // .map(this.extractData)
-      // .catch(this.handleError);
+    return this.http.post(this.userUrl, body, options)
+    .map(this.extractData)
+    .catch(this.handleError);
   }
 
   getmyPosts(): Observable<any> {
