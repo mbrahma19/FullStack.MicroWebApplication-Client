@@ -39,8 +39,9 @@ export class CreatecommentComponent implements OnInit {
       return;
     }
 
-    // console.log(this.comment.body.toString());
-    const id = +this.route.snapshot.paramMap.get("id");
+    console.log(this.comment.body.toString());
+   const id = +this.route.snapshot.paramMap.get("id");
+
 
     let commentbody= this.comment.body;
 
