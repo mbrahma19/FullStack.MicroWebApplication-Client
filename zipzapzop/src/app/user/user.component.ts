@@ -28,7 +28,7 @@ export class UserComponent implements OnInit {
   ngOnInit() {}
 
   user: User = {
-    title: "Please fill below Information",
+    title: "Please Fill in the Below Information",
     username: "",
     password: "",
     firstName: "",

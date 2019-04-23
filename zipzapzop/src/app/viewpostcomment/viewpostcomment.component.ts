@@ -17,7 +17,7 @@ import {Post} from "../post/post";
 @Component({
   selector: 'app-viewpostcomment',
   templateUrl: './viewpostcomment.component.html',
-  styleUrls: ['./viewpostcomment.component.css']
+  styleUrls: ['../app.component.css']
 })
 export class ViewpostcommentComponent implements OnInit {
 
@@ -28,7 +28,6 @@ export class ViewpostcommentComponent implements OnInit {
   constructor(
     private viewcommentService: ViewcommentService,
     private route: ActivatedRoute,
-    private route1: Router,
   ) { }
 
   ngOnInit() {
@@ -51,7 +50,9 @@ export class ViewpostcommentComponent implements OnInit {
 
   getComments(): void {
 
+
      const id = +this.route.snapshot.paramMap.get("id");
+
     this.viewcommentService
       .getComments(id)
       .subscribe((comments: Comment[]) => (this.comments = comments));

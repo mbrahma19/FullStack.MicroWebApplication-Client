@@ -1,6 +1,6 @@
 <form (ngSubmit)="submit()" #postForm="ngForm" style= "margin-top: 5em">
   <div class="form-group">
-    <label for="post_title">Title</label>
+    <label for="post_title">Blog Title</label>
     <input type="text" class="form-control" id="post_title" style="width: 50%; margin-left:auto; margin-right:auto;"
            required
            [(ngModel)]="post.title" name="title" />
@@ -13,6 +13,7 @@
     required
     [(ngModel)]="post.body" name="body"></textarea>
     </div>
-    
-  <button type="submit" style= "margin: 3em 0" class="btn btn-success">Submit</button>
+
+  <button type="submit" style= "margin: 3em 0" class="btn btn-success btn-lg">Submit</button>
   </form> 
+
