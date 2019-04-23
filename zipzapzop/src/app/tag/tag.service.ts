@@ -25,7 +25,7 @@ export class TagService {
   }
 
   getTags(): Observable<any> {
-    return this.http.get(this.tagsUrl); //.map(response => response.json());
+    return this.http.get(this.tagsUrl);
   }
 
   getTag(id: number): Observable<any> {
@@ -39,13 +39,17 @@ export class TagService {
   }
 
   addTagsToPost(tagId: number, postId: number): Observable<any> {
-    let body = JSON.stringify(this.getTag(tagId));
-    console.log("also here");
     let headers = { "Content-Type": "application/json" };
     let options = { headers: headers };
     const url = `${this.addTagsUrl}/${postId}/tags/${tagId}`;
-    console.log("finally here");
-    console.log(url);
+
     return this.http.post<any>(url, "", options);
+  }
+
+  removeTagFromPost(tagId: number, postId: number): Observable<any> {
+    let headers = { "Content-Type": "application/json" };
+    const url = `${this.addTagsUrl}/${postId}/tags/${tagId}`;
+
+    return this.http.delete<any>(url);
   }
 }
