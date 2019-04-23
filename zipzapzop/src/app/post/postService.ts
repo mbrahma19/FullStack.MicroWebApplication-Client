@@ -32,7 +32,7 @@ export class postService {
 
   }
 
-  getSinglePost(id: number): Observable<any>{
+  getSinglePost(id: Number): Observable<any>{
     const url = `${this.userUrl}/${id}`;
     return this.httpClient.get<Post>(url);
   }
@@ -69,6 +69,11 @@ export class postService {
 
   getmyPosts(): Observable<any> {
     return this.http.get(this.userUrl)
+  }
+
+  deletePost(id: Number){
+    const url = `${this.userUrl}/${id}`;
+    return this.httpClient.delete(url);
   }
 
   extractData(res: Response) {

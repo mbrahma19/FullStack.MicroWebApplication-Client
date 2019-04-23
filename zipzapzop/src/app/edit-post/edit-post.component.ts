@@ -25,6 +25,12 @@ export class EditPostComponent implements OnInit {
     console.log(this.post);
     this.service.updatePost(this.post).subscribe(x => this.router.navigate(['/posts']));
   }
+  cancel(){
+   this.router.navigate(['/posts']);
+  }
+  delete(){
+    this.service.deletePost(this.id).subscribe(x => this.router.navigate(['/posts']));
+  }
 
 }
 
