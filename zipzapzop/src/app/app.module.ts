@@ -38,6 +38,7 @@ import { EditPostComponent } from "./edit-post/edit-post.component";
 import { PostDetailComponent } from "./post-detail/post-detail.component";
 import { SinglePostComponent } from "./single-post/single-post.component";
 import { FooterComponent } from "./footer/footer.component";
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { FooterComponent } from "./footer/footer.component";
     TagSelectionComponent,
     SinglePostComponent,
     CreatecommentComponent,
-    FooterComponent
+    FooterComponent,
+    HomePageComponent
   ],
 
   imports: [
