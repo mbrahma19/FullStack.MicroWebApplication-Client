@@ -25,7 +25,7 @@ export class TagService {
   }
 
   getTags(): Observable<any> {
-    return this.http.get(this.tagsUrl); //.map(response => response.json());
+    return this.http.get(this.tagsUrl);
   }
 
   getTag(id: number): Observable<any> {
