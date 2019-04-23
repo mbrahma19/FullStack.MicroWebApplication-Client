@@ -54,6 +54,10 @@ export class EditcommentComponent implements OnInit {
       });
   }
 
+  goBack(){
+    this.location.back();
+  }
+
   delete(){
 
     if (!this.comment) {
