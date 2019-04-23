@@ -16,6 +16,10 @@ export class AppComponent {
     this.router.navigate(["user"]);
   }
 
+  ngOnInit() {
+    this.router.navigate(['/home/']);
+  }
+
 
 
 
