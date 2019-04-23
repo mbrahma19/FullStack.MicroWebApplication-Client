@@ -7,7 +7,7 @@ import { Router } from "@angular/router";
 @Component({
   selector: "app-create-post",
   templateUrl: "./create-post.component.html",
-  styleUrls: ["../app.component.css"]
+  styleUrls: ["./create-post.component.css"]
 })
 export class CreatePostComponent implements OnInit {
   post: Post = new Post();
