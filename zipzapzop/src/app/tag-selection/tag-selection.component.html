@@ -14,11 +14,12 @@
   <a *ngFor="let tag of tags">
     <button
       type="button"
-      class="btn btn-primary active"
-      (click)="onChange(tag.id, 1)"
+      style="margin: .4em .5em"
+      class="btn btn-secondary active"
+      (click)="onChange(tag.id)"
       aria-pressed="true"
     >
-      {{ tag.keyWord }} - Add Tag to Post
+      {{ tag.keyWord }}
     </button>
   </a>
 </div>
