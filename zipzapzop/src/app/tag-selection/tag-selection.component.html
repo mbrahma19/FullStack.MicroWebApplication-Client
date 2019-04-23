@@ -9,15 +9,17 @@
  
   </a>
 </div> -->
-
+<!-- <script>
+  angular.module()
+</script> -->
 <div class="btn-group-horizontal" data-toggle="buttons">
   <a *ngFor="let tag of tags">
     <button
       type="button"
       style="margin: .4em .5em"
-      class="btn btn-secondary active"
-      (click)="onChange(tag.id)"
-      aria-pressed="true"
+      class="btn btn-secondary"
+      (click)="onChange(tag.id, true)"
+      aria-pressed="false"
     >
       {{ tag.keyWord }}
     </button>

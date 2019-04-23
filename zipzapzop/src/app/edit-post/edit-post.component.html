@@ -15,32 +15,30 @@
   <div class="form-group">
     <label for="post_body">Body</label>
 
-
-    <textarea 
-    class="form-control post_body"  
-    type="body" 
-    rows="20" 
-    style="width: 60%; margin-left:auto; margin-right:auto;" 
-    id="post_body"
-    required
-    [(ngModel)]="post.body" 
-    name="body"></textarea>
-    </div>
-    <div>
-        <app-tag-selection></app-tag-selection>
-      </div>
-  <button type="submit" style= "margin: 2em 1em" class="btn btn-success">Submit</button>
-
-  <a style= "margin: 2em 1em; color: #FFF" class="btn btn-success" href= "/posts/{{post.id}}">Cancel</a>
-
-  <a style= "margin: 2em 1em; color: #FFF" class="btn btn-danger" (click)="delete()">Delete</a>
-  
-</form> 
-
-
-  <button type="cancel" style="margin: 2em 1em" class="btn btn-success">
-    Cancel
+    <textarea
+      class="form-control post_body"
+      type="body"
+      rows="20"
+      style="width: 60%; margin-left:auto; margin-right:auto;"
+      id="post_body"
+      required
+      [(ngModel)]="post.body"
+      name="body"
+    ></textarea>
+  </div>
+  <div>
+    <app-tag-selection></app-tag-selection>
+  </div>
+  <button type="submit" style="margin: 2em 1em" class="btn btn-success">
+    Submit
   </button>
+
+  <a
+    style="margin: 2em 1em; color: #FFF"
+    class="btn btn-success"
+    href="/posts/{{ post.id }}"
+    >Cancel</a
+  >
 
   <a
     style="margin: 2em 1em; color: #FFF"
