@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { TagService } from "../tag/tag.service";
+import { ActivatedRoute } from "@angular/router";
+import { Post } from "../post/post";
 
 @Component({
   selector: "app-tag-selection",
@@ -10,35 +12,46 @@ import { TagService } from "../tag/tag.service";
 })
 export class TagSelectionComponent implements OnInit {
   tags: Array<any>;
-  constructor(private tagService: TagService) {}
-  isChecked: boolean = false;
+  posts: Post[];
+
+  constructor(private tagService: TagService, private route: ActivatedRoute) {}
+
   ngOnInit() {
     this.tagService.getTags().subscribe(data => {
       this.tags = data;
+      this.posts = [];
     });
   }
 
-  onChange(tagId: number, postId: number) {
-    if (!this.isChecked) {
-      this.addTagToPostOnClick(tagId, postId);
-      console.log(this.isChecked);
-    } else {
-      this.removeTagFromPostOnClick(tagId, postId);
-      console.log(this.isChecked);
-    }
+  onChange(tagId: number) {
+    let isChecked: boolean = false;
+
+    this.tagService.getPosts(tagId).subscribe(data => {
+      this.posts = data;
+
+      const postId = +this.route.snapshot.paramMap.get("id");
+      for (let i = 0; i < this.posts.length; i++) {
+        if (this.posts[i].id === postId) {
+          isChecked = true;
+        }
+      }
+      if (isChecked == false) {
+        this.addTagToPostOnClick(tagId, postId);
+      } else {
+        this.removeTagFromPostOnClick(tagId, postId);
+      }
+    });
   }
 
   addTagToPostOnClick(tagId: number, postId: number) {
     this.tagService
       .addTagsToPost(tagId, postId)
       .subscribe(data => console.log(data));
-    this.isChecked = true;
   }
 
   removeTagFromPostOnClick(tagId: number, postId: number) {
     this.tagService
       .removeTagFromPost(tagId, postId)
       .subscribe(data => console.log(data));
-    this.isChecked = false;
   }
 }
