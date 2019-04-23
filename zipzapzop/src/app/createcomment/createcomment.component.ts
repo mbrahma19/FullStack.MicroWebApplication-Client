@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {commentService } from "./commentService";
-
+import { Location } from "@angular/common";
 import { Comment } from "./comment";
 import {ActivatedRoute} from "@angular/router";
 
@@ -15,6 +15,7 @@ export class CreatecommentComponent implements OnInit {
   constructor(
     public commentService: commentService,
     private route: ActivatedRoute,
+    private location: Location
   ) { }
   errorMessage: string;
 
@@ -39,14 +40,18 @@ export class CreatecommentComponent implements OnInit {
     }
 
     console.log(this.comment.body.toString());
-   // const id = +this.route.snapshot.paramMap.get("id");
+   const id = +this.route.snapshot.paramMap.get("id");
+
 
     let commentbody= this.comment.body;
 
-    this.commentService.submitComment(this.comment,2)
+    this.commentService.submitComment(this.comment,id)
 
 
-      .subscribe(comment => this.comment, error => (this.errorMessage = <any>error));
+      .subscribe(comment => {
+        this.comment, error => (this.errorMessage = <any>error);
+        location.reload();
+      });
   }
 
 }

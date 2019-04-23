@@ -1,3 +1,8 @@
-<p>
-  single-post works!
-</p>
+<div *ngIf="post">
+    <button class = "btn btn-secondary" (click)="goBack()"> Go Back</button>
+    <br>
+    <app-post-detail [post] = post></app-post-detail>
+    <button class = "btn btn-primary btn-lg" routerLink = "/posts/{{post.id}}/edit"> Edit Post</button>
+    <app-createcomment></app-createcomment>
+    <app-viewpostcomment></app-viewpostcomment>
+</div>

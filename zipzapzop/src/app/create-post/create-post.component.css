@@ -1,5 +1,4 @@
-
-
+ 
 textarea {
   width: 50px;
   height: 150px;
@@ -12,4 +11,3 @@ textarea {
 textarea, input, .form-control[_ngcontent-c1] {
     width: 80%;
 }
-

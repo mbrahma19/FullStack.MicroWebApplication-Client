@@ -4,6 +4,8 @@ import { Observable } from "rxjs/Observable";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/catch";
 import { Tag } from "./tag";
+import { Headers, RequestOptions, Http, Response } from "@angular/http";
+import { throwError } from "rxjs";
 
 const httpOptions = {
   headers: new HttpHeaders({ "Content-Type": "application/json" })
@@ -13,16 +15,17 @@ const httpOptions = {
   providedIn: "root"
 })
 export class TagService {
-  private tagsUrl = "//localhost:8090/tags";
-
+  private tagsUrl = "http://localhost:8090/tags";
+  private addTagsUrl = "http://localhost:8090/posts";
   private http: HttpClient;
+  private http2: Http;
 
   constructor(http: HttpClient) {
     this.http = http;
   }
 
   getTags(): Observable<any> {
-    return this.http.get(this.tagsUrl); //.map(response => response.json());
+    return this.http.get(this.tagsUrl);
   }
 
   getTag(id: number): Observable<any> {
@@ -33,5 +36,20 @@ export class TagService {
   getPosts(id: number): any {
     const url = `${this.tagsUrl}/${id}/posts`;
     return this.http.get<any>(url);
+  }
+
+  addTagsToPost(tagId: number, postId: number): Observable<any> {
+    let headers = { "Content-Type": "application/json" };
+    let options = { headers: headers };
+    const url = `${this.addTagsUrl}/${postId}/tags/${tagId}`;
+
+    return this.http.post<any>(url, "", options);
+  }
+
+  removeTagFromPost(tagId: number, postId: number): Observable<any> {
+    let headers = { "Content-Type": "application/json" };
+    const url = `${this.addTagsUrl}/${postId}/tags/${tagId}`;
+
+    return this.http.delete<any>(url);
   }
 }
