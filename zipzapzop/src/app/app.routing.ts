@@ -12,6 +12,7 @@ import { ViewpostcommentComponent } from "./viewpostcomment/viewpostcomment.comp
 import { EditcommentComponent } from "./editcomment/editcomment.component";
 import { CreatecommentComponent } from "./createcomment/createcomment.component";
 import { EditPostComponent } from "./edit-post/edit-post.component";
+import { HomePageComponent } from './home-page/home-page.component';
 
 export const AppRoutes: Routes = [
   { path: "app", component: AppComponent },
@@ -40,7 +41,9 @@ export const AppRoutes: Routes = [
 
   { path: "comments/:id", component: EditcommentComponent },
 
-  { path: "posts/:id/edit", component: EditPostComponent }
+  { path: "posts/:id/edit", component: EditPostComponent },
+
+  { path: "home", component: HomePageComponent}
 ];
 
 export const AppComponents: any = [
