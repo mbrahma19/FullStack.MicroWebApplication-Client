@@ -23,10 +23,8 @@ export class CreatePostComponent implements OnInit {
     }
     //change it to logged in user
     let user = new User();
-    // user.id = 1;
-    //this.post.user = user;
+  
     console.log(this.post);
-
     //send the post to the BE server
     //telling the service to tell the server to create the post
     // this.service.WritePost(this.post).subscribe(x => this.router.navigate(['/posts'] ));
@@ -34,5 +32,6 @@ export class CreatePostComponent implements OnInit {
       this.post = post;
       this.router.navigate(['/posts']);
     });
+
   }
 }

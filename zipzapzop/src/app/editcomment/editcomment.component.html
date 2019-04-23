@@ -3,14 +3,16 @@
     <table width="600">
       <tr>
         <td>
-
           <label> Comment</label>
-
-          <label for="comment_body"></label><textarea rows="1" cols="2" type="body" width=50 class="form-control" id="comment_body"
-                                                      required
-                                                      [(ngModel)]= "comment.body" name ="comment">
+          <label for="comment_body"></label><textarea 
+          rows="1" 
+          cols="2" 
+          type="body" 
+          width=50 
+          class="form-control" id="comment_body"
+          required
+          [(ngModel)]= "comment.body" name ="comment">
    </textarea>
-
         </td>
       </tr>
     </table>
@@ -18,5 +20,6 @@
 
 
   <button type="submit" class="btn btn-success">Submit</button>
-  <button class="btn btn-success" routerLink="/comments" (click)=delete()>delete</button>
+  <button class="btn btn-success" routerLink="/comments" (click)=delete()>Delete</button>
+  <button class="btn btn-success" routerLink="/comments" (click)=delete()>Cancel</button>
 </form>
