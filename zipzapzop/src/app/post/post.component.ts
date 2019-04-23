@@ -10,7 +10,7 @@ import { DatePipe } from "@angular/common";
 @Component({
   selector: "app-post",
   templateUrl: "./post.component.html",
-  styleUrls: ["../app.component.css"]
+  styleUrls: ["../app.component.css","./post.component.css"]
 })
 export class PostComponent implements OnInit {
   constructor(public postService: postService) {}
