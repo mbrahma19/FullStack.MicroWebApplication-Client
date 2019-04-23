@@ -4,15 +4,18 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.js"></script>
 
   <div>
-    <table border="0" align="center" width="600">
+    <table border="0" align="center" width=40%>
       <tr>
         <td>
-
           <label> Comment</label>
-
-          <label for="comment_body"></label><textarea rows="1" cols="2" type="body" width=50 class="form-control" id="comment_body"
-                                                      required
-                                                      [(ngModel)]="comment.body" name="comment">
+          <label for="comment_body"></label><textarea 
+          rows="1" 
+          cols="2" 
+          type="body" 
+          class="form-control" 
+          id="comment_body"
+          required
+          [(ngModel)]="comment.body" name="comment">
    </textarea>
           <script>
             import {$} from "protractor";

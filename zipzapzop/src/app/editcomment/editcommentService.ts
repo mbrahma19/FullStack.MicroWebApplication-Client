@@ -33,7 +33,7 @@ export class EditcommentService {
  // @Input() comment: Viewcomment;
 
   private editcommentUrl = 'http://localhost:8090/comment';
-
+  private deletecommenturl="//localhost:8090/deletecomment";
 
 
   private http: Http;
@@ -75,12 +75,17 @@ export class EditcommentService {
     return Observable.throw(error.json().error || 'Server Error');
   }
 
+  deleteComment(id: number) {
 
-
-
-
-
-
+    let headers = new Headers({ "Content-Type": "application/json" });
+    let options = new RequestOptions({ headers: headers });
+ 
+    const newUrl= `${this.deletecommenturl}/${id}`;
+    return this.http
+      .delete(newUrl, options)
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
 
 
 
