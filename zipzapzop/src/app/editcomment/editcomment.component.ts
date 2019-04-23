@@ -1,9 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {TagService} from "../tag/tag.service";
 import {ViewcommentService} from "../viewpostcomment/viewcomment.service";
 import {Viewcomment} from "../viewpostcomment/viewcomment";
 import {EditcommentService} from "./editcommentService";
+import { Location } from "@angular/common";
 
 
 @Component({
@@ -18,7 +18,8 @@ export class EditcommentComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private viewpostcommentService: ViewcommentService,
-    private ediicommentService : EditcommentService
+    private ediicommentService : EditcommentService,
+    private location: Location
   ) { }
 
   ngOnInit()
@@ -47,7 +48,27 @@ export class EditcommentComponent implements OnInit {
     this.ediicommentService.submitComment(this.comment,id)
 
 
-      .subscribe(comment => this.comment, error => (this.errorMessage = <any>error));
+      .subscribe(comment => {
+        this.comment, error => (this.errorMessage = <any>error);
+        this.location.back();
+      });
+  }
+
+  goBack(){
+    this.location.back();
+  }
+
+  delete(){
+
+    if (!this.comment) {
+      return;
+    }
+    const id = +this.route.snapshot.paramMap.get("id");
+    this.ediicommentService.deleteComment(this.comment.id)
+      .subscribe(comment => {
+        this.comment, error => (this.errorMessage = <any>error);
+        this.location.back();
+      });
   }
 
 }
