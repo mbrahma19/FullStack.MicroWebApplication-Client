@@ -13,6 +13,7 @@ import { EditcommentComponent } from "./editcomment/editcomment.component";
 import { CreatecommentComponent } from "./createcomment/createcomment.component";
 import { EditPostComponent } from "./edit-post/edit-post.component";
 import { HomePageComponent } from './home-page/home-page.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 export const AppRoutes: Routes = [
   { path: "app", component: AppComponent },
@@ -43,7 +44,9 @@ export const AppRoutes: Routes = [
 
   { path: "posts/:id/edit", component: EditPostComponent },
 
-  { path: "home", component: HomePageComponent}
+  { path: "home", component: HomePageComponent},
+
+  { path: "about", component: AboutUsComponent}
 ];
 
 export const AppComponents: any = [
