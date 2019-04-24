@@ -1,10 +1,10 @@
 <h2>Available Posts</h2>
 
 <div *ngFor="let post of posts" class="jumbotron">
-    <app-post-detail [post] = post></app-post-detail>
-    <a *ngIf="post" routerLink="/posts/{{ post.id }}">
-        <button type="button" class="btn btn-secondary btn-lg">
-        View Post
-        </button>
-    </a>
+  <app-post-detail [post]="post"></app-post-detail>
+  <a *ngIf="post" routerLink="/posts/{{ post.id }}">
+    <button type="button" class="btn btn-secondary btn-lg">
+      View Post
+    </button>
+  </a>
 </div>
