@@ -8,7 +8,7 @@ import {ActivatedRoute} from "@angular/router";
 @Component({
   selector: 'app-createcomment',
   templateUrl: './createcomment.component.html',
-  styleUrls: ['./createcomment.component.css']
+  styleUrls: ["../app.component.css"]
 })
 export class CreatecommentComponent implements OnInit {
 
@@ -39,8 +39,9 @@ export class CreatecommentComponent implements OnInit {
       return;
     }
 
-    // console.log(this.comment.body.toString());
-    const id = +this.route.snapshot.paramMap.get("id");
+    console.log(this.comment.body.toString());
+   const id = +this.route.snapshot.paramMap.get("id");
+
 
     let commentbody= this.comment.body;
 

@@ -50,7 +50,9 @@ export class ViewpostcommentComponent implements OnInit {
 
   getComments(): void {
 
-    const id = +this.route.snapshot.paramMap.get("id");
+
+     const id = +this.route.snapshot.paramMap.get("id");
+
     this.viewcommentService
       .getComments(id)
       .subscribe((comments: Comment[]) => (this.comments = comments));
