@@ -1,0 +1,40 @@
+<form  (ngSubmit)= submitCommentonPost() style="margin-bottom: 10px;margin-top: 10px ">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.js"></script>
+
+  <div >
+    <table border="0" align="center" width=50%>
+      <tr>
+        <td>
+          <label for="comment_body"></label><textarea 
+          placeholder="Add a comment"
+          rows="1" 
+          cols="2" 
+          type="body" 
+          class="form-control" 
+          id="comment_body"
+          required
+          [(ngModel)]="comment.body" name="comment">
+   </textarea>
+          <script>
+            import {$} from "protractor";
+            $("#comment_body").emojioneArea({
+
+              pickerPosition: "right"
+
+            });
+            </script>
+
+        <script>
+          $(document).ready(function(){
+          $("#comment_body").emojioneArea();
+          });
+          </script>
+
+        </td>
+      </tr>
+    </table>
+  </div>
+  <button type="submit" style= "margin-top: 10px" class="btn btn-success">Submit Comment</button>
+</form>

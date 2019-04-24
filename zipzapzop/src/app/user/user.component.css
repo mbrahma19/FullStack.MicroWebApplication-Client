@@ -1,0 +1,23 @@
+/* 
+
+label {
+  color: maroon;
+  font-weight: bold;
+  display: block;
+  width: 150px;
+  text-align: center;
+  font-size: 100%;
+  clear : left;
+  display: inline-block;
+
+
+
+}
+
+
+
+
+input[type=submit] {
+
+  color: maroon;
+} */

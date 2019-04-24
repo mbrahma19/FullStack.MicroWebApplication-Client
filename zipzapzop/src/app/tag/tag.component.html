@@ -1,0 +1,8 @@
+<h3>View Posts by Tags</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let tag of tags" routerLink="/tags/{{ tag.id }}">
+    <button type="button" class="btn btn-secondary btn-lg">
+      {{ tag.keyWord }}
+    </button>
+  </a>
+</div>
