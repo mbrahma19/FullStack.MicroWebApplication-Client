@@ -1,8 +1,23 @@
 <div *ngIf="post">
-    <button class = "btn btn-secondary" style="margin-bottom: 10px " (click)="goBack()"> Go Back</button>
-    <br>
-    <app-post-detail [post] = post ></app-post-detail>
-    <button class = "btn btn-primary btn-lg" style= "margin: 0 0 1.5em 0"  routerLink = "/posts/{{post.id}}/edit"> Edit Post</button>
-    <app-createcomment></app-createcomment>
-    <app-viewpostcomment></app-viewpostcomment>
+  <button
+    class="btn btn-secondary"
+    style="margin-bottom: 10px "
+    (click)="goBack()"
+  >
+    Go Back
+  </button>
+  <br />
+  <app-post-detail [post]="post"></app-post-detail>
+  <button
+    class="btn btn-primary btn-lg"
+    style="margin: 0 0 1.5em 0"
+    routerLink="/posts/{{ post.id }}/edit"
+  >
+    Edit Post
+  </button>
+  <div *ngFor="let tag of tags">
+    <span class="badge badge-info">{{ tag.keyWord }}</span>
+  </div>
+  <app-createcomment></app-createcomment>
+  <app-viewpostcomment></app-viewpostcomment>
 </div>
