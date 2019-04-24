@@ -15,7 +15,6 @@ export class CreatecommentComponent implements OnInit {
   constructor(
     public commentService: commentService,
     private route: ActivatedRoute,
-    private location: Location
   ) { }
   errorMessage: string;
 

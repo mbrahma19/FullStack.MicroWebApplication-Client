@@ -21,9 +21,7 @@ import { TagComponent } from "../tag/tag.component";
 export class UserComponent implements OnInit {
   errorMessage: string;
 
-  constructor(public userService: userService) {}
-
-  private router: Router;
+  constructor(public userService: userService,  private router: Router) {}
 
   ngOnInit() {}
 
@@ -47,6 +45,11 @@ export class UserComponent implements OnInit {
     this.userService
       .register(this.user)
 
-      .subscribe(user => this.user, error => (this.errorMessage = <any>error));
+      .subscribe(user => {
+        this.user, error => (this.errorMessage = <any>error);
+        
+      });
+      this.router.navigate(['/posts']);
   }
+
 }

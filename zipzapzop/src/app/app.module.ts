@@ -39,6 +39,7 @@ import { PostDetailComponent } from "./post-detail/post-detail.component";
 import { SinglePostComponent } from "./single-post/single-post.component";
 import { FooterComponent } from "./footer/footer.component";
 import { HomePageComponent } from './home-page/home-page.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     SinglePostComponent,
     CreatecommentComponent,
     FooterComponent,
-    HomePageComponent
+    HomePageComponent,
+    AboutUsComponent
   ],
 
   imports: [
