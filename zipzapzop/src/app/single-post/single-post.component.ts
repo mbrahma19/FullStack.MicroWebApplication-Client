@@ -22,7 +22,7 @@ export class SinglePostComponent implements OnInit {
 
   ngOnInit() {
     this.getPost();
-    this.getTagsOnThisPost();
+    // this.getTagsOnThisPost();
   }
 
   goBack() {
@@ -36,10 +36,10 @@ export class SinglePostComponent implements OnInit {
     });
   }
 
-  getTagsOnThisPost(): void {
-    const id = +this.route.snapshot.paramMap.get("id");
-    this.postservice.getTagsForPost(id).subscribe(data => {
-      this.tags = data;
-    });
-  }
+  // getTagsOnThisPost(): void {
+  //   const id = +this.route.snapshot.paramMap.get("id");
+  //   this.postservice.getTagsForPost(id).subscribe(data => {
+  //     this.tags = data;
+  //   });
+  // }
 }

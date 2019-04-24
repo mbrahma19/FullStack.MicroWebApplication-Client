@@ -86,7 +86,7 @@ export class postService {
     return throwError(error.toString() || error);
   }
 
-  getTagsForPost(id: number): Observable<any> {
+  getTagsForPost(id: Number): Observable<any> {
     const url = `${this.userUrl}/${id}/tags`;
     console.log("this the url" + url);
     return this.httpClient.get(url);

@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from "@angular/core";
 import { postService } from "../post/postService";
 import { Post } from "../post/post";
 import { Tag } from "../tag/tag";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: "app-post-detail",
@@ -12,18 +12,23 @@ import { ActivatedRoute } from "@angular/router";
 export class PostDetailComponent implements OnInit {
   constructor(
     private postservice: postService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   @Input() post: Post;
   @Input() tags: Array<Tag>;
   ngOnInit() {
-    this.getTagsOnThisPost();
+    this.getTagsOnThisPost(this.post.id);
   }
-  getTagsOnThisPost(): void {
+  getTagsOnThisPost(idNum: Number): void {
     const id = +this.route.snapshot.paramMap.get("id");
-    this.postservice.getTagsForPost(id).subscribe(data => {
+    this.postservice.getTagsForPost(idNum).subscribe(data => {
       this.tags = data;
     });
+  }
+
+  goToTagsPage(id: Number) {
+    this.router.navigate(["/tags/" + id]);
   }
 }
