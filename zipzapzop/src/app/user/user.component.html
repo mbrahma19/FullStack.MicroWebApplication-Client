@@ -1,0 +1,89 @@
+<form
+  name="myForm"
+  (ngSubmit)="register()"
+  method="post"
+  ng-controller="builtinValidationCtrl as $ctrl"
+  ng-submit="$ctrl.submit()"
+>
+  <h1>
+    {{ user.title }}
+  </h1>
+  <br>
+  <div class="progress">
+      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
+    </div>
+  <br>
+  <div
+    ng-class="{'has-error': form2.name.$touched && form2.name.$invalid}"
+  >
+    <input
+      [(ngModel)]="user.username"
+      placeholder="Enter Username"
+      name="username"
+      type="text"
+      size="50"
+      [ngClass]="{ 'is-invalid': submitted }"
+      ng-model="$ctrl.name"
+      ng-pattern="/^[a-zA-Z]+$/"
+    />
+  </div>
+  <br>
+  <div
+    ng-class="{'has-error': form2.pass.$touched && form2.pass.$invalid}"
+  >
+    <input
+      [(ngModel)]="user.password"
+      placeholder="Enter Password"
+      name="password"
+      type="Password"
+      size="50"
+      [ngClass]="{ 'is-invalid': submitted }"
+      required
+      ng-model="$ctrl.pass"
+      ng-minlength="4"
+    />
+  </div>
+  <br>
+  <div>
+    <input
+      [(ngModel)]="user.firstName"
+      name="first_name"
+      placeholder="First Name"
+      type="text"
+      size="50"
+      [ngClass]="{ 'is-invalid': submitted }"
+    />
+
+    <!--<div *ngIf="user.firstname.errors.required">firstname is required</div>-->
+  </div>
+  <br>
+  <div>
+    <input
+      [(ngModel)]="user.lastName"
+      name="last_name"
+      placeholder="Last Name"
+      type="text"
+      size="50"
+      [ngClass]="{ 'is-invalid': submitted && user.lastname.errors }"
+    />
+    <!--<div *ngIf="user.lastname.errors.required">lastname is required</div>-->
+  </div>
+  <br>
+  <div>
+    <input
+      [(ngModel)]="user.email"
+      name="email"
+      placeholder="Email"
+      type="text"
+      size="50"
+      [ngClass]="{ 'is-invalid': submitted && user.email.errors }"
+    />
+    <!--<div *ngIf="user.lastname.errors.required">email is required</div>-->
+  </div>
+  <br />
+  <br />
+  <div>
+    <button type="submit" class="btn btn-secondary">Register</button>
+  </div>
+  <br />
+</form>

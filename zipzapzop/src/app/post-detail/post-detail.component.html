@@ -1,0 +1,17 @@
+<div *ngIf="post" class="jumbotron">
+  <h1 class="display-3">{{ post.title }}</h1>
+  <p class="lead">Created on :{{ post.createDate | date: "yyyy-MM-dd" }}</p>
+  <hr class="my-4" />
+  <p>{{ post.body }}</p>
+  <div class="d-flex flex-row justify-content-center">
+    <div *ngFor="let tag of tags">
+      <button
+        type="button"
+        class=" btn btn-sm badge badge-info m-1"
+        routerLink="/tags/{{ tag.id }}"
+      >
+        {{ tag.keyWord }}
+      </button>
+    </div>
+  </div>
+</div>
